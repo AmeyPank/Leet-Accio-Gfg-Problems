@@ -1,0 +1,47 @@
+class Solution {
+        public String minWindow(String s, String t) {
+
+            if (s == null || t == null || s.length() == 0) {
+                return "";
+            }
+
+            // left,right pointing to window range
+            int left = 0; // left
+            int right = 0; // right
+
+            int[] countMap = new int[256]; // target chars needed
+
+
+            for (char each : t.toCharArray()) {
+                countMap[each]++;
+            }
+
+            int countInRange = 0;
+            int minSize = Integer.MAX_VALUE;
+            String result = "";
+
+            while (right < s.length()) {
+                --countMap[s.charAt(right)];
+                if (countMap[s.charAt(right)] >= 0) { // @note: >=
+                    countInRange++;
+                }
+
+                while (countInRange == t.length()) {
+                    if (minSize > right - left + 1) {
+                        minSize = right - left + 1;
+                        result = s.substring(left, right + 1);
+                    }
+
+                    ++countMap[s.charAt(left)]; // '--' above if, so '++' back
+                    if (countMap[s.charAt(left)] > 0) {
+                        countInRange--;
+                    }
+                    left++;
+                }
+
+                right++;
+            }
+
+            return result;
+        }
+    }
