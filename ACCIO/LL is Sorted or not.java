@@ -1,6 +1,7 @@
 // Approach 1: Straightforward Approach
 
-// Traverse the list from head to end. At each step, check if node->data <= node->next->data, and output "NO" if that evaluates to false. Else output "YES" at the end.
+// Traverse the list from head to end. At each step, check if node->data <= node->next->data, 
+// and output "NO" if that evaluates to false. Else output "YES" at the end.
 
 // Time Complexity: O(N).
 
@@ -9,6 +10,7 @@
 // Below is the implementation of the above idea:
 
 // Java:
+
 import java.util.*;
 
 public class Main {
@@ -73,7 +75,7 @@ class Accio
     static void checkListSorted(Node head)
     {
         //Add your code here.
-        Node temp=head;
+        Node temp=head; 
         int flag=0;
         while(temp.next!=null)
         {
