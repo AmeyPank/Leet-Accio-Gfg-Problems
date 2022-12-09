@@ -35,7 +35,9 @@ Node(int x)
 }
 }
 
-class Main { public static void makeLoop(Node head, Node tail, int x){ if (x == 0) return;
+class Main { 
+    public static void makeLoop(Node head, Node tail, int x){ 
+        if (x == 0) return;
 
     Node curr = head;
     for(int i=1; i<x; i++)
@@ -71,17 +73,26 @@ public static void main (String[] args){
 }
 }
 
-class Solution { public static Node detectLoop(Node head){ Node slow = head; Node fast = head;
+class Solution { 
+    public static Node detectLoop(Node head){ 
+        Node slow = head; 
+        Node fast = head;
 
     while(fast != null && fast.next != null){
+
         slow = slow.next;
         fast = fast.next.next;
+
         if(slow == fast){
+
             slow = head;
+
             while(slow != fast){
+
                 slow = slow.next;
                 fast = fast.next;
             }
+
             return slow;
         }
     }
