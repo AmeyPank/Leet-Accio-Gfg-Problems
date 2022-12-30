@@ -1,0 +1,24 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.util.*;
+  
+// Main class
+class Main {
+  
+    // Main driver method
+    public static void main(String args[])
+    {
+  
+        Scanner sc = new Scanner(System.in);
+		
+        String s = sc.next();
+  
+        // Converting string s to lowercase letter
+        String s2 = s.toLowerCase();
+  
+        // Printing the lowercase string corresponding
+        // to input string
+        System.out.println(s2);
+    }
+}
