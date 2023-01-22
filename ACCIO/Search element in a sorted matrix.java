@@ -26,7 +26,7 @@ class Solution {
         // Binary search.
         while (start <= end) {
             int mid = start + (end - start) / 2;
-            int val = mat.get(mid / n).get(mid % n);
+            int val = mat.get(mid / n).get(mid % n);z
 
             if (target < val) {
                 end = mid - 1;

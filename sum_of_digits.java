@@ -25,6 +25,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         Solution Ob = new Solution();
-        System.out.println(Ob.sum_of_digit(n));
+        System.out.println(Ob.s
+        /um_of_digit(n));
     }
 }
