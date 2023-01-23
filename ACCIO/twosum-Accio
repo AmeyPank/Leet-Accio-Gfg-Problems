@@ -1,0 +1,52 @@
+// Approach
+// We use the approch of two pointers. The first pointer is set in the beginning of the array and the second at the end.
+
+// Algorithm
+// If the sum of elements at the two pointers is greater than the target, we move the right pointer a step left, to reduce the sum.
+
+// If the sum of elements at the two pointers is less than the target, we move the left pointer a step right, to increase the sum.
+
+// We repeat the process until we find the target.
+
+// Time complexity
+// O(N)
+
+// Space complexity
+// O(1)
+
+// Below is the implementation of above idea:
+
+// Java
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Main {
+    
+    public static int[] twoSum(int[] A, int target) {
+        int len = A.length;
+        
+        int i = 0;
+        int j = len - 1;
+        
+        while (i < j) {
+            int sum = A[i] + A[j];
+            
+            if (sum > target) j--;
+            else if (sum < target) i++;
+            else return new int[] {i+1, j+1};
+        }
+        return new int[] {-1, -1};
+    }
+	
+    public static void main (String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));	
+        long n = Long.parseLong(br.readLine().trim());
+        String inputLine[] = br.readLine().trim().split(" ");
+        int[] arr = new int[(int)n];
+        for(int i=0; i<n; i++)arr[i]=Integer.parseInt(inputLine[i]);
+        int m = Integer.parseInt(br.readLine().trim());
+        int[] ans = (twoSum(arr, m));
+        System.out.println(ans[0] + " " + ans[1]);
+	}
+}
