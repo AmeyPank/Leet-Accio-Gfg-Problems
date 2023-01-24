@@ -1,0 +1,17 @@
+import java.util.*;
+
+class Solution{
+	public static boolean isPowerOfTwo(int n) {
+        //Write your code here
+		double x = Math.log(n) / Math.log(2);
+        return x == Math.floor(x);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.close();
+        System.out.println(Solution.isPowerOfTwo(n));
+    }
+}
