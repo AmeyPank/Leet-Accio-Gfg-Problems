@@ -1,0 +1,52 @@
+// Try to add the maximum remaining and minimum remaining this will give us the optimal two people to send together
+
+// Algorithm
+
+// Take two pointers, one from start and one from end.
+// If a[start]+a[end]<=limit then take both in the same boat,
+// else take the end pointer to the boat and update the pointer accordingly.
+// Time Complexity:
+
+// O(NlogN) , cause we are sorting the array of size N
+
+// Space Complexity:
+
+// O(1) , cause we are only using constant space for some variable
+
+// Below is the implementation of above approach:
+
+// 1. Java:
+
+import java.io.*;
+import java.util.*;
+
+public class Main {
+	public static int numRescueBoats(int[] people, int limit) {
+        Arrays.sort(people);
+        int i = 0, j = people.length - 1;
+        int ans = 0;
+
+        while (i <= j) {
+            ans++;
+            if (people[i] + people[j] <= limit)
+                i++;
+            j--;
+        }
+
+        return ans;
+    }
+
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int k = sc.nextInt();
+		int[] nums = new int[n];
+		for (int i = 0; i < n; i++)
+		{
+			nums[i] = sc.nextInt();
+		}
+		System.out.println(numRescueBoats(nums, k));
+	}
+
+}
