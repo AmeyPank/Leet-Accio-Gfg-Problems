@@ -53,6 +53,5 @@ function SumofDigits( n) {
   // write a recursive method
   if (n < 10) return n;
  
-
   return n % 10 + SumofDigits(Math.floor(n / 10)) 
 }
