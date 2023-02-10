@@ -1,0 +1,51 @@
+// Approach
+// Iterate all the elements of range X-Y to check if it is a Perfect number of not.
+// Once can check perfect number by finding all the divisors, and comparing with the summation.
+// Time Complexity: O(n√n) we go over the array.
+
+// Space Complexity: O(1) constant space used.
+
+// Below is implementation of above Approach:
+
+// 1. Java
+
+import java.util.*;
+
+class Accio{
+    static boolean isPerfect(int n){
+        int sum = 1;
+        for (int i = 2; i * i <= n; i++){
+            if (n % i==0){
+                if(i * i != n) sum = sum + i + n / i;
+                else sum = sum + i;
+            }
+        }
+        if (sum == n && n != 1) return true;
+        return false;
+    }
+    static List<Integer> ASLoops3(int X,int Y){
+        List<Integer> ans = new ArrayList<>();
+        Boolean found = false;
+        for(int i=X;i<=Y;++i){
+            if(isPerfect(i)==true){
+                ans.add(i);
+                found=true;
+            }
+        }
+        if(found==false) ans.add(-1);
+        return ans;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) throws Throwable {
+        Scanner sc = new Scanner(System.in);
+        int X = sc.nextInt();
+        int Y = sc.nextInt();
+        Accio obj = new Accio();
+        List<Integer> ans=obj.ASLoops3(X,Y);
+        for (int i = 0; i < ans.size(); i++) {
+            System.out.print(ans.get(i) + " ");
+        }
+    }
+}
