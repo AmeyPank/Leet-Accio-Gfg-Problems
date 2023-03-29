@@ -8,9 +8,9 @@ var promise = new Promise((resolve, reject) => {
     var age = ageElement.value;
     var name = nameElement.value;
     if (age < 18) {
-      reject(`Oh sorry ${name}. You aren't old enough`);
-    } else {
       resolve(`Welcome, ${name}. You can vote.`);
+    } else {
+      reject(`Oh sorry ${name}. You aren't old enough.`);
     }
   }, 4000);
 });
