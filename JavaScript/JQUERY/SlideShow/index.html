@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Slideshow Example</title>
+  <style>
+    /* CSS to hide all images except the first one */
+    .slideshow img {
+      display: none;
+      width: 40%;
+      height: 40%;
+    }
+    .slideshow img:first-child {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h1>jQuery Slideshow Example</h1>
+  <div class="slideshow">
+    <img src="image1.jpg">
+    <img src="image2.jpg">
+    <img src="image3.jpg">
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
