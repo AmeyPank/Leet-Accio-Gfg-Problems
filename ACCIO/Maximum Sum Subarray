@@ -1,0 +1,28 @@
+// Java program to print largest contiguous array sum
+import java.util.*;
+
+public class Main {
+
+  // Driver Code
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int[] arr = new int[n];
+    for (int i = 0; i < n; i++) arr[i] = sc.nextInt();
+    sc.close();
+    System.out.println(maxSubArraySum(arr));
+  }
+
+  // Function to find the maximum sum of contiguous subarray
+  static int maxSubArraySum(int a[]) {
+    int maxSoFar = a[0]; // maximum sum so far
+    int maxEndingHere = a[0]; // maximum sum ending here
+    for (int i = 1; i < a.length; i++) {
+      // calculate the maximum sum ending here for each element in the array
+      maxEndingHere = Math.max(maxEndingHere + a[i], a[i]);
+      // update the maximum sum so far if the maximum sum ending here is greater
+      maxSoFar = Math.max(maxSoFar, maxEndingHere);
+    }
+    return maxSoFar;
+  }
+}
