@@ -14,6 +14,6 @@ ArrayWrapper.prototype.valueOf = function () {
 ArrayWrapper.prototype.toString = function () {
     // Convert the nums array to a comma-separated string
     var str = this.nums.join(",");
-
     return "[" + str + "]";
+
 };
