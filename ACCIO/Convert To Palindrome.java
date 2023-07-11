@@ -1,4 +1,5 @@
-/*Convert To Palindrome
+/*
+Convert To Palindrome
 Given a string S consisting only of lowercase characters. We need to check whether it is possible to make this string a palindrome after removing exactly one character from this.
 
 If it is possible then print 1 else return 0.
